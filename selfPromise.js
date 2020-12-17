@@ -129,10 +129,10 @@ class _promise {
 
 var curry = function(fn) {
     var args = [].slice.call(arguments, 1)
-    return () =>{
+    return function(){
         var newArgs = args.concat([].slice(arguments))
         console.log(fn)
-        return fn.apply( this,newArgs)
+        return fn.apply(this,newArgs)
     }
     }
 
