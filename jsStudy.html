@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <script>
+        window.onload = function test() {
+            var a = 12 
+            console.log(a)
+        }
+        document.addEventListener('DOMContentLoaded', function(event) {
+            console.log(13)
+        })
+
+        if ("IntersectionObserver" in window) {        
+    let lazyImageObserver = new IntersectionObserver((entries, observer) => {          
+        entries.forEach((entry, index) => {            
+            // 如果元素可见            
+            if (entry.intersectionRatio > 0) {              
+                let lazyImage = entry.target              
+                lazyImage.src = lazyImage.dataset.src              
+                lazyImage.classList.remove("lazy-image")              
+                lazyImageObserver.unobserve(lazyImage)              
+                // this.lazyImages.splice(index, 1)            
+            }          
+        })        
+    })        
+    this.lazyImages.forEach(function(lazyImage) {          
+        lazyImageObserver.observe(lazyImage);        
+    })      
+}
+
+    
+    </script>
+</head>
+<body>
+    <div id="test" style="display:flex;">
+        <div>
+            <div id="content">30000</div>
+            <div>2000</div>
+            <img src="../Docments/bachlor_graduate_photo.jpg" alt="毕业照" loading = "lazy">
+        </div>
+    </div>
+</body>
+</html>

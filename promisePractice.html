@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <script src="selfPromise.js"></script>
+    <script src="shadowDeepCopy.js"></script>
+</head>
+<body>
+    <div style="display: inline-block;">
+        <div class="div">
+            dfdf
+        </div>
+    </div>
+</body>
+<script>
+    var promise1 = new _promise((resolve, reject) => {setTimeout(() => {
+        resolve('success')
+    }, 5000);}).then((value) => {console.log(value); return value}).then((ddd) => {console.log(ddd)})
+    var obj = {
+        time: 3.32,
+        name: 'haode',
+        place: {
+            place1: "tian",
+            place2: 'di',
+        }
+    }
+    var obj2 = deepCopy(obj)
+    console.log(obj2)
+
+    console.log(add(1,2))
+    var obj = curry(add, 1, 3)
+    console.log(obj())
+</script>
+</html>
+
+<style>
+.div {
+    background: deepskyblue;
+
+/* 怪异盒子*/
+box-sizing: border-box;
+
+/* 标准盒子 */
+/* box-sizing: content-box; */
+
+width: 100px;
+height: 200px;
+padding: 20%;
+border: 10px solid black;
+margin: 20%;
+}
+</style>
