@@ -105,8 +105,10 @@ let postOrderUnRec = (node) => {
         let stack = []
         stack.push(node)
         while(stack.length !==0) {
+            // tmp save the value of last loop's out-stack record or in-stack record
             let tmp = null
             tmp = stack[stack.length-1]
+            // when back to upper level, check if the tmp.left or tmp.right is same as tmp.
             if(tmp.left && tmp.left !== node && tmp.right !== node) {
                 stack.push(tmp.left)
             }
