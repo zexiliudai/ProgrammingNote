@@ -7,6 +7,7 @@
     <script src="selfPromise.js"></script>
     <script src="shadowDeepCopy.js"></script>
     <script src="./curry.js"></script>
+    <script src="./binaryTree.js"></script>
 </head>
 <body>
     <div style="display: inline-block;">
@@ -33,6 +34,28 @@
     console.log(add(1,4))
     var addTest = curry(add)
     console.log(addTest(1,10,11))
+
+    let number = [1, 2, 3, 4, 5]
+    number = new Proxy(number, {
+        set(target, prop, val) {
+            if (typeof val === 'number') {
+                target[prop] = val
+                return true
+            } else {
+                return false
+            }
+        }
+    })
+    number.push(1)
+    // number.push('3')
+    console.log(number)
+
+    let user = {
+        _name = 'Guest',
+        get user() {
+            
+        }
+    }
 </script>
 </html>
 

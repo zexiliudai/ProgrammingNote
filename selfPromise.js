@@ -127,18 +127,18 @@ class _promise {
     }
 }
 
-var curry = function(fn) {
-    var args = [].slice.call(arguments, 1)
-    return function(){
-        var newArgs = args.concat([].slice(arguments))
-        // console.log(fn)
-        return fn.apply(this,newArgs)
-    }
-    }
+// var curry = function(fn) {
+//     var args = [].slice.call(arguments, 1)
+//     return function(){
+//         var newArgs = args.concat([].slice(arguments))
+//         // console.log(fn)
+//         return fn.apply(this,newArgs)
+//     }
+//     }
 
-var add = function(a, b) {
-    return (a + b)
-}
+// var add = function(a, b) {
+//     return (a + b)
+// }
 
 
 
