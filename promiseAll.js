@@ -27,3 +27,17 @@ let test = () => {
         console.log(i)
     }
 }
+
+// camel to underline and underline to camel
+function camelToUnderline(str) {
+	return str.replace(/([A-Z])/g, "_$1").toLowerCase
+}
+let str = 'HahahahahahHa'
+
+function underLineToCamel(str) {
+	return str.replace(/\_(\w)/g, function(match, arg1) {
+		arg1.toUpperCase()
+	})
+}
+let str = 'haha_dfjk_dklsfj'
+underLineToCamel(str)
