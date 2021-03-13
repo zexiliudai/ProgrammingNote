@@ -1,2 +1,3 @@
 # ProgrammingNote
-This repo is used for js and css knowledge review
+This repo is used for JS and CSS knowledge review.
+
